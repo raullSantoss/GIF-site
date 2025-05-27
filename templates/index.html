@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="mb-4">GIFs Search</h1>
+<form method="POST" class="d-flex mb-4">
+  <input name="query" class="form-control me-2" placeholder="Busque um GIF (ex: memes, sasuke)" value="{{ query or '' }}">
+  <button class="custom-btn btn-15" type="submit">Buscar</button>
+</form>
+
+<div class="row">
+  {% for gif in gifs %}
+  <div class="col-md-4 mb-3">
+    <div class="card">
+      <img src="{{ gif }}" class="card-img-top" alt="GIF">
+      <div class="card-body">
+        <a href="https://wa.me/?text={{ gif }}" target="_blank" class="btn btn-success w-100">
+          Enviar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

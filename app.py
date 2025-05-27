@@ -3,7 +3,7 @@ import requests
 import os
 
 app = Flask(__name__)
-GIPHY_API_KEY = os.getenv('GIPHY_API_KEY')  # configurar no Render
+GIPHY_API_KEY = '3EYYKiKtSuWQw89XS55YvIz5xFw9Spm9'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
